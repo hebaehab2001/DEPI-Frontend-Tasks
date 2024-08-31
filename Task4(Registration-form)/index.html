@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="all">
+
+      <header>Registration Page</header>
+
+      <form action=" " method="POST">
+
+        <div>
+          <input id="fname" type="text" placeholder="First Name" required />
+          <span id="invalidfname" class="invalid">please insert a valid first name</span>
+        </div>
+
+        <div>
+          <input id="lname" type="text" placeholder="Last Name" required />
+          <span id="invalidlname" class="invalid">please insert a valid last name</span>
+        </div>
+
+        <div>
+          <input id="email" type="email" placeholder="email" required />
+          <span id="invalidemail" class="invalid">please insert a valid email</span>
+        </div>
+
+        <div>
+          <input id="pass" type="password" placeholder="password" required />
+          <span id="invalidpass" class="invalid">please insert a strong password</span>
+        </div>
+
+        <div>
+          <input id="confirmpass" type="password" placeholder="confirm password" required/>
+          <span id="invalidcpass" class="invalid">the password doesn't match</span>
+        </div>
+
+        <div>
+          <input id="phone" type="tel" placeholder="phone number" required />
+          <span id="invalidpnum" class="invalid">please insert a valid phone number</span>
+        </div>
+
+        <div>
+          <label for="image">profile image:</label>
+          <input
+            id="image"
+            type="file"
+            placeholder="image"
+            accept=".jpg,.png"
+            class="imageinput"
+            required/>
+          <span id="invalidimage" class="invalid">please insert a file with max size 5MB</span>
+        </div>
+
+        <input type="submit" value="Login" class="button" />
+
+      </form>
+    </div>
+    <script src="java.js"></script>
+  </body>
+</html>
