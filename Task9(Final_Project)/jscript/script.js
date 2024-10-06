@@ -25,35 +25,6 @@ window.onclick = (e) => {
         body.style.overflow = "";
         }
     };
-/*dashboard nav*/
-
-
-const navItems=document.querySelectorAll('.nav-item');
-const navItem1 = document.getElementById('nav-item-1');
-const navItem2 = document.getElementById('nav-item-2');
-const navItem3 = document.getElementById('nav-item-3');
-const dashboardSection1 = document.getElementById('section1');
-const dashboardSection2 = document.getElementById('section2');
-const dashboardSections =document.querySelectorAll('.dashboardSections');
-
-
-navItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const targetSectionId  = item.dataset.section;;
-    dashboardSections.forEach(section => {
-      section.style.display = 'none';
-    });
-    const targetSection = document.getElementById(targetSectionId);
-     if (targetSection==navItem1) {
-      dashboardSection1.style.display = 'block';
-     }
-     else if(targetSection==navItem2)
-     {
-      dashboardSection2.style.display = 'block';
-     }
-     
-  });
-});
 
 
 /*calendar*/
@@ -122,7 +93,6 @@ function renderCalendar() {
 
   dates.innerHTML = datesHtml;
   header.textContent = `${months[month]} ${year}`;
-  fulldate=`${date|month|year}`.toString();
 }
 
 navs.forEach((nav) => {
@@ -150,24 +120,6 @@ navs.forEach((nav) => {
 renderCalendar();
 
 
-
-
-
-function savedata(assigndate,taskname)
-{
-  
-  let d=`${assigndate}`;
-
-      // Check if the date already exists in the events object
-  if (events[d]) {
-    // If it exists, append the new task to the existing array
-    events[d].push(taskname);
-  } else {
-    // If it doesn't exist, create a new array and add the task
-    events[d] = [taskname];
-  }
-   console.log(events);
-}
 
 document.querySelectorAll('.day').forEach(sday => {
           sday.addEventListener('click', (e) => {
@@ -213,19 +165,49 @@ addbtn.addEventListener("click", (e) =>
           }
           else
           {
+            tasklistcontainer.innerHTML = "";
+            showEvents(selectedDate);
             const li = document.createElement('li');
             li.textContent = inputbox.value;
             tasklistcontainer.appendChild(li);
-            tasklistcontainer.style.height="40%"
             let span =document.createElement("span");
               span.innerHTML="\u00d7";
               li.appendChild(span);
-              showEvents(selectedDate);
               savedata(selectedDate,inputvalue);
           }
           inputbox.value="";
         }); 
 
+function savedata(assigndate,taskname)
+{
+  
+  let d=`${assigndate}`;
+
+      // Check if the date already exists in the events object
+  if (events[d]) {
+    // If it exists, append the new task to the existing array
+    events[d].push(taskname);
+  } else {
+    // If it doesn't exist, create a new array and add the task
+    events[d] = [taskname];
+  }
+  localStorage.setItem(assigndate, JSON.stringify(events));
+   console.log(events);
+}
+
+function deletedata(assigndate,taskname)
+{
+  
+  let d=`${assigndate}`;
+
+      // Check if the date already exists in the events object
+  if (events[d]) {
+    // If it exists, append the new task to the existing array
+    events[d].pop(taskname);
+
+   console.log(events);
+}
+}
 tasklistcontainer.addEventListener("click",function(e){
     if(e.target.tagName ==="LI")
     {
@@ -235,7 +217,7 @@ tasklistcontainer.addEventListener("click",function(e){
     else if (e.target.tagName ==="SPAN")
     {
         e.target.parentElement.remove();
-        
+        deletedata(selectedDate,e.target.value);
     } 
 
     }

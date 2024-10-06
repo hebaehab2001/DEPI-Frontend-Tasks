@@ -81,7 +81,7 @@ upemail.addEventListener('input', (e) =>
 uppass.addEventListener('input', (e) =>
 {
     const value=e.target.value;
-    if(passRegex.test(value) )
+    if(passRegex.test(value) <15)
     {
         invalidpassword.style.display='none';
         uppass.style.border='none';
@@ -103,14 +103,14 @@ signbtn.addEventListener("click", (e) =>
     if(isemailvalid && isfnamevalid && ispassvalid)
     {
         window.location.href ="../index.html";
-        localStorage.setItem("user", JSON.stringify(sforminputvalue));
+        localStorage.setItem(`user-${sforminputvalue.username}`, JSON.stringify(sforminputvalue));
         console.log(sforminputvalue);
     }
     else{
         const inputs =document.querySelectorAll('.sign-up input');
         inputs.forEach((input)=>
         {
-            if(input.value.trim(' ').length==0);{
+            if(input.value.trim('').length==0);{
                 input.style.border='2px solid red';
             }
             })
@@ -192,7 +192,7 @@ loginbtn.addEventListener("click", (e) =>
         const inputs =document.querySelectorAll('.sign-in input');
         inputs.forEach((input)=>
         {
-            if(input.value.trim(' ').length==0);{
+            if(input.value.trim('').length==0);{
                 input.style.border='2px solid red';
             }
         })
