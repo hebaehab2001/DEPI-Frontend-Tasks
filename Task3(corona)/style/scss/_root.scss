@@ -1,0 +1,29 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    background-color: $white-color;
+}
+
+.heading {
+    font-family: RedHatDisplay-Bold;
+    font-size: $font-50;
+    line-height: 59.5px;
+    color: $secondary_color;
+    span {
+        color: $primary_color;
+        font-size: $font-20;
+        line-height: 35.96px;
+    }
+}
+
+a {
+    color: $nav-link-color;
+}
+
+p {
+    font-family: Gelion-Regular;
+    font-size: $font-18;
+    color: $text_color;
+    line-height: normal;
+    padding-block: $padding-8;
+}

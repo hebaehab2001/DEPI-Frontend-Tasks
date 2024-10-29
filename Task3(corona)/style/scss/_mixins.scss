@@ -1,0 +1,20 @@
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flexSpace{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+}
+
+@mixin position($position,$top:null,$bottom:null,$left:null,$right:null){
+    position: $position;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+}
+

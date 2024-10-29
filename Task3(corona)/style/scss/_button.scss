@@ -1,0 +1,32 @@
+.btn-primary {
+  font-size: $font-20;
+  font-family: RedHatDisplay-Bold;
+  background-color: $primary_color;
+  color: $white-color;
+  border-color: $primary_color;
+  border-radius: $radius-64;
+  padding-inline: $padding-40;
+  padding-block: $padding-16;
+  box-shadow: 0px 8px 87px 0px #0000001a;
+  &:hover {
+    background-color: $primary_color_lighter;
+    border-color: $primary_color_lighter;
+    color: $primary_color;
+  }
+}
+.btn-secondry {
+  font-size:$font-20;
+  font-family: Gelion-SemiBold;
+  background-color: $primary_color_lighter;
+  border-color: $primary_color_lighter;
+  color: $primary_color;
+  border-radius: $radius-64;
+  padding-inline: $padding-40;
+  padding-block: $padding-16;
+  box-shadow: 0px 8px 87px 0px #0000001a;
+  &:hover {
+    background-color: $primary_color;
+    color: $white-color;
+    border-color: $primary_color;
+  }
+}
