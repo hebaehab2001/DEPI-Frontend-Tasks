@@ -31,7 +31,7 @@ const forminputvalue={
     phone:'',
     file:null
 }
-fname.addEventListener('input', (e) =>
+fname.addEventListener('input', (e) => 
 {
     const value=e.target.value;
     if(value.length>10 || value.trim().length ==0  )
@@ -166,7 +166,7 @@ formbtn.addEventListener('click', (e) =>
         }
     })
 
-    if(isemailvalid && isfnamevalid && isfnamevalid && ispassvalid && iscpassvalid && isphonevalid && isimagevalid)
+    if(isemailvalid && isfnamevalid && islnamevalid && ispassvalid && iscpassvalid && isphonevalid && isimagevalid)
     {
         //form is valid 
         console.log(forminputvalue);

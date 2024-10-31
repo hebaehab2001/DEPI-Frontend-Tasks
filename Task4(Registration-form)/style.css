@@ -1,21 +1,25 @@
-body 
-{
-  background-color: #d0b8a8;
+* {
   padding: 0%;
   margin: 0%;
 }
-.all 
-{
+
+body {
+  background-color: #d0b8a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.all {
   background-color: white;
-  width: 40%;
+  width: 45%;
   border-top-left-radius: 2em;
   border-bottom-right-radius: 2em;
-  margin: auto;
   margin-block: 4%;
   padding-block: 30px;
+  
 }
-header 
-{
+header {
   color: #8d493a;
   padding: 1em;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -23,8 +27,7 @@ header
   text-align: center;
   font-weight: bold;
 }
-.button 
-{
+.button {
   border-color: #8d493a;
   background-color: #8d493a;
   color: azure;
@@ -34,13 +37,11 @@ header
   text-align: center;
   margin-block: 25px;
 }
-form 
-{
+form {
   margin-inline: 10%;
   margin-block: 20px;
 }
-input 
-{
+input {
   background-color: #f8ede3;
   padding-top: 15px;
   padding-bottom: 10px;
@@ -52,18 +53,15 @@ input
   display: block;
   width: 98%;
 }
-label 
-{
+label {
   font-size: 14px;
 }
-.invalid 
-{
+.invalid {
   color: red;
   font-size: 10px;
   display: none;
 }
-.imageinput 
-{
+.imageinput {
   margin-block: 0%;
   padding-top: 10px;
 }
