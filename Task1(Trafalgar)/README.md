@@ -1,4 +1,4 @@
-Trafalgar website :
+<h1>Trafalgar website :<\h1>
 A fully-functional medical website contain header, nav, content and footer built using HTML and CSS, designed for optimal user experience.
 The design was inspired by a Figma prototype and brought to life through meticulous development.
 
